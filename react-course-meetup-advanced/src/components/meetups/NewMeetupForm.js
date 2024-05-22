@@ -2,8 +2,13 @@ import Card from '../ui/Card';
 import classes from './NewMeetupForm.module.css'
 
 function NewMeetupForm() {
+
+  function submitHandler(event) {
+    event.preventDefault();
+  }
+
   return <Card>
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={submitHandler}>
       <div className={classes.control}>
         <label htmlFor='title'>Meetup Title</label>
         <input type='text' required id='title'/>
